@@ -1,0 +1,22 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "To Do list project",
+  "private": "true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krimoelbahri/Todo-List.git"
+  },
+  "author": "Elbahri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krimoelbahri/Todo-List/issues"
+  },
+  "homepage": "https://github.com/krimoelbahri/Todo-List#readme",
+  "devDependencies": {
+    "webpack-cli": "^4.7.0"
+  }
+}
