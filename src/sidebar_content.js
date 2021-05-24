@@ -11,7 +11,7 @@ const addProjectForm = function() {
     const addProjectForm = document.createElement('div');
     addProjectForm.setAttribute('id','addProjectForm');
     addProjectForm.classList.add('projectForm')
-    addProjectForm.innerHTML=`<input type="text" name="project-name" id="projectName" placeholder="Projects Name"><button class="add" id="add">add</button> `;
+    addProjectForm.innerHTML=`<input type="text" name="project-name" id="projectName" placeholder="Project Name"><button class="add" id="add">add</button> `;
     addProjectForm.querySelector('#add').addEventListener('click',pushProject);
     return addProjectForm
 }

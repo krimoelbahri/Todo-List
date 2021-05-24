@@ -1,5 +1,5 @@
 import {sideBarContent} from './sidebar_content'
-
+import {mainContent} from './main_content'
 
 const sideBarButton = function(){
     const sideBarButton = document.createElement('i');
@@ -35,6 +35,7 @@ const loadSideBar= function(){
 const loadMain= function(){
     const main = document.createElement('main');
     main.setAttribute('id','main');
+    main.appendChild(mainContent())
     return main;
 
 }
@@ -47,8 +48,8 @@ const loadFooter= function(){
 const loadWebsite= function(){
     const content = document.getElementById('content');
     content.appendChild(loadHeader());
-    content.appendChild(loadMain());
     content.appendChild(loadSideBar());
+    content.appendChild(loadMain());
     content.appendChild(loadFooter());   
 }
 

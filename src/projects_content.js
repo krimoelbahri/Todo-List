@@ -4,11 +4,15 @@ let projects= [
 ]
 const pushProject=function(){
     showHideAddProjectForm();
+    if(document.getElementById('projectName').value === ''){
+        return;
+    }else{
     let projectName= {
          name: document.getElementById('projectName').value ,
         }
     projects.push(projectName);
     renderProjects();
+    }
 }
 const renderProjects=function(){
     console.log(document.querySelector('#projectsContent'))
