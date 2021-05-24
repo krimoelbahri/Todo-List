@@ -1,3 +1,5 @@
+/* Html*/
+
 header {
   display: flex;
   flex-direction: row;
@@ -17,18 +19,58 @@ h3 {
   color: #261447;
   right: 50px;
 }
-
-.sideBarButton {
-  margin-left: 50px;
-  font-size: 30px;
-  cursor: pointer;
+ol {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-start;
+  align-content: center;
+  margin-top: 10px;
+  margin-left: 10%;
 }
+footer {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  padding: 10px;
+  width: 100%;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    hsla(186, 33%, 94%, 1) 0%,
+    hsla(216, 41%, 79%, 1) 100%
+  );
+}
+
+/* classes*/
 .sideBar {
   display: flex;
 }
 .sideBar.off {
   display: none;
 }
+.projectForm {
+  display: none;
+}
+.projectForm.on {
+  display: flex;
+}
+.TaskForm {
+  display: none;
+}
+.TaskForm.on {
+  display: flex;
+}
+.sideBarButton {
+  margin-left: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* sideBar*/
 #sideBar {
   flex-direction: column;
   position: fixed;
@@ -56,12 +98,6 @@ h3 {
   margin-top: 15px;
   cursor: pointer;
 }
-.projectForm {
-  display: none;
-}
-.projectForm.on {
-  display: flex;
-}
 #addProjectForm {
   flex-direction: row;
   align-content: center;
@@ -85,28 +121,63 @@ h3 {
   border-bottom: 0.1mm solid gray;
   padding-bottom: 8px;
 }
-ol {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  list-style: none;
-  justify-content: flex-start;
-  align-content: center;
-  margin-top: 10px;
-  margin-left: 10%;
+/* Main*/
+
+#main {
+  margin-left: 20%;
 }
-footer {
-  display: flex;
-  flex-direction: row;
+#mainContent {
+  margin: 5%;
+}
+#mainTitle {
+  border-bottom: 1px solid;
+  margin-right: 20%;
+  padding-bottom: 10px;
+}
+#addTaskButton {
   position: fixed;
-  padding: 10px;
-  width: 100%;
-  bottom: 0px;
-  justify-content: center;
+  top: 70px;
+  right: 30px;
+  font-size: xx-large;
+}
+#addTaskForm {
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+  border: 1px solid;
+  position: absolute;
+  width: 60%;
+  height: 25%;
   background: linear-gradient(
     90deg,
     hsla(186, 33%, 94%, 1) 0%,
     hsla(216, 41%, 79%, 1) 100%
   );
+}
+#close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+#taskDescription {
+  height: 100px;
+  width: -webkit-fill-available;
+}
+.formdivs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.taskContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid;
+  margin-top: 5px;
+  height: 2rem;
 }
