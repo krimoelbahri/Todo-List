@@ -1,183 +1,183 @@
 /* Html*/
 
 header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 25px;
-  padding: 10px;
-  background: linear-gradient(
-    90deg,
-    hsla(186, 33%, 94%, 1) 0%,
-    hsla(216, 41%, 79%, 1) 100%
-  );
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 25px;
+	padding: 10px;
+	background: linear-gradient(
+		90deg,
+		hsla(186, 33%, 94%, 1) 0%,
+		hsla(216, 41%, 79%, 1) 100%
+	);
 }
 h3 {
-  position: absolute;
-  font-size: xx-large;
-  font-style: italic;
-  color: #261447;
-  right: 50px;
+	position: absolute;
+	font-size: xx-large;
+	font-style: italic;
+	color: #261447;
+	right: 50px;
 }
 ol {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  list-style: none;
-  justify-content: flex-start;
-  align-content: center;
-  margin-top: 10px;
-  margin-left: 10%;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	list-style: none;
+	justify-content: flex-start;
+	align-content: center;
+	margin-top: 10px;
+	margin-left: 10%;
 }
 footer {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  padding: 10px;
-  width: 100%;
-  bottom: 0px;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    90deg,
-    hsla(186, 33%, 94%, 1) 0%,
-    hsla(216, 41%, 79%, 1) 100%
-  );
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	padding: 10px;
+	width: 100%;
+	bottom: 0px;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(
+		90deg,
+		hsla(186, 33%, 94%, 1) 0%,
+		hsla(216, 41%, 79%, 1) 100%
+	);
 }
 
 /* classes*/
 .sideBar {
-  display: flex;
+	display: flex;
 }
 .sideBar.off {
-  display: none;
+	display: none;
 }
 .projectForm {
-  display: none;
+	display: none;
 }
 .projectForm.on {
-  display: flex;
+	display: flex;
 }
 .TaskForm {
-  display: none;
+	display: none;
 }
 .TaskForm.on {
-  display: flex;
+	display: flex;
 }
 .sideBarButton {
-  margin-left: 50px;
-  font-size: 30px;
-  cursor: pointer;
+	margin-left: 50px;
+	font-size: 30px;
+	cursor: pointer;
 }
 
 /* sideBar*/
 #sideBar {
-  flex-direction: column;
-  position: fixed;
-  border-right: solid 1px #252a34;
-  width: 20%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    hsla(0, 0%, 100%, 1) 0%,
-    hsla(120, 9%, 98%, 1) 100%
-  );
+	flex-direction: column;
+	position: fixed;
+	border-right: solid 1px #252a34;
+	width: 20%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		hsla(0, 0%, 100%, 1) 0%,
+		hsla(120, 9%, 98%, 1) 100%
+	);
 }
 #sideBarContent {
-  margin-left: 15%;
+	margin-left: 15%;
 }
 #addsign {
-  margin-right: 10px;
-  width: 20px;
+	margin-right: 10px;
+	width: 20px;
 }
 #addProject {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 15px;
-  cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 15px;
+	cursor: pointer;
 }
 #addProjectForm {
-  flex-direction: row;
-  align-content: center;
-  align-items: center;
-  margin-top: 10px;
-  justify-content: flex-start;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	margin-top: 10px;
+	justify-content: flex-start;
 }
 #projectName {
-  width: 65%;
-  border: none;
-  border-bottom: solid 1px grey;
-  margin-right: 10%;
+	width: 65%;
+	border: none;
+	border-bottom: solid 1px grey;
+	margin-right: 10%;
 }
 #projects {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 20px;
-  margin-right: 5%;
-  border-bottom: 0.1mm solid gray;
-  padding-bottom: 8px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 20px;
+	margin-right: 5%;
+	border-bottom: 0.1mm solid gray;
+	padding-bottom: 8px;
 }
 /* Main*/
 
 #main {
-  margin-left: 20%;
+	margin-left: 20%;
 }
 #mainContent {
-  margin: 5%;
+	margin: 5%;
 }
 #mainTitle {
-  border-bottom: 1px solid;
-  margin-right: 20%;
-  padding-bottom: 10px;
+	border-bottom: 1px solid;
+	margin-right: 20%;
+	padding-bottom: 10px;
 }
 #addTaskButton {
-  position: fixed;
-  top: 70px;
-  right: 30px;
-  font-size: xx-large;
+	position: fixed;
+	top: 70px;
+	right: 30px;
+	font-size: xx-large;
 }
 #addTaskForm {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border: 1px solid;
-  position: absolute;
-  width: 60%;
-  height: 25%;
-  background: linear-gradient(
-    90deg,
-    hsla(186, 33%, 94%, 1) 0%,
-    hsla(216, 41%, 79%, 1) 100%
-  );
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	border: 1px solid;
+	position: absolute;
+	width: 60%;
+	height: 25%;
+	background: linear-gradient(
+		90deg,
+		hsla(186, 33%, 94%, 1) 0%,
+		hsla(216, 41%, 79%, 1) 100%
+	);
 }
 #close {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  border-radius: 50%;
-  border: 1px solid;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	border-radius: 50%;
+	border: 1px solid;
 }
 #taskDescription {
-  height: 100px;
-  width: -webkit-fill-available;
+	height: 100px;
+	width: -webkit-fill-available;
 }
 .formdivs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	height: 100%;
 }
 .taskContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  border: 1px solid;
-  margin-top: 5px;
-  height: 2rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	border: 1px solid;
+	margin-top: 5px;
+	height: 2rem;
 }
