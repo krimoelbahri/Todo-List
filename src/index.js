@@ -1,2 +1,2 @@
-import {loadWebsite} from './load_page'
-loadWebsite()
+import {loadWebsite} from "./load_page";
+loadWebsite(); 
