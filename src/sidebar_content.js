@@ -1,61 +1,45 @@
 import {pushProject} from "./projects_content";
+import { htmlCreate } from "./domManipulation";
+import { showHideElement } from "./domManipulation";
 import addsign from './images/addsign.svg'
 
 const addProject=function(){
-	const addProject=document.createElement("div");
-	addProject.setAttribute("id","addProject");
+	const addProject=htmlCreate("div","addProject")
 	addProject.addEventListener("click", showHideAddProjectForm);
 	addProject.innerHTML=`<img id =\"addsign\" src=${addsign} alt=\"Chef\"> Add Project`;
 	return addProject;
 };
 const addProjectForm = function() {
-	const addProjectForm = document.createElement("div");
-	addProjectForm.setAttribute("id","addProjectForm");
-	addProjectForm.classList.add("projectForm");
+	const addProjectForm = htmlCreate("div","addProjectForm","","projectForm");
 	addProjectForm.innerHTML="<input type=\"text\" name=\"project-name\" id=\"projectName\" placeholder=\"Project Name\"><button class=\"add\" id=\"add\">add</button> ";
 	addProjectForm.querySelector("#add").addEventListener("click",pushProject);
 	return addProjectForm;
 };
-const showHideAddProjectForm=function(e){
-	let addProjectForm=document.getElementById("addProjectForm");
-	if(addProjectForm.classList.value === "projectForm"){
-		addProjectForm.classList.add("on");
-	}else{
-		addProjectForm.classList.remove("on");
-	}
+const showHideAddProjectForm=function(){
+	showHideElement("addProjectForm","on");
 };
 const inbox=function(){
-	const inbox=document.createElement("ol");
-	inbox.setAttribute("id","inbox");
-	inbox.innerHTML="- inbox";
+	const inbox=htmlCreate("ol","inbox","- Inbox");
 	return inbox;
 };
 const today=function(){
-	const today=document.createElement("ol");
-	today.setAttribute("id","today");
-	today.innerHTML="- today";
+	const today= htmlCreate("ol","today","- Today");
 	return today;
 };
 const thisWeek=function(){
-	const thisWeek=document.createElement("ol");
-	thisWeek.setAttribute("id","thisWeek");
-	thisWeek.innerHTML="- thisWeek";
+	const thisWeek= htmlCreate("ol","thisWeek","- This Week");
 	return thisWeek;
 };
 const projects=function(){
-	const projects=document.createElement("div");
-	projects.setAttribute("id","projects");
-	projects.innerHTML="Projects";
+	const projects=htmlCreate("div","projects","projects")
 	return projects;
 };
 const projectsContent=function(){
-	const projectsContent=document.createElement("div");
-	projectsContent.setAttribute("id","projectsContent");
+	const projectsContent=htmlCreate("div","projectsContent")
 	return projectsContent;
 };
 const sideBarContent=function(){
-	const sideBarContent=document.createElement("div");
-	sideBarContent.setAttribute("id","sideBarContent");
+	const sideBarContent=htmlCreate("div","sideBarContent");
 	sideBarContent.appendChild(addProject());
 	sideBarContent.appendChild(addProjectForm());
 	sideBarContent.appendChild(inbox());
@@ -66,7 +50,6 @@ const sideBarContent=function(){
 
 	return sideBarContent;
 };
-export{showHideAddProjectForm};
 export {sideBarContent};
 
 /*document.addEventListener('click',function(){
