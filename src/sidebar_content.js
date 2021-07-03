@@ -35,7 +35,7 @@ const projects=function(){
 	return projects;
 };
 const projectsContent=function(){
-	const projectsContent=htmlCreate("div","projectsContent")
+	const projectsContent=htmlCreate("div","projectsContent","")
 	return projectsContent;
 };
 const sideBarContent=function(){
