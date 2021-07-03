@@ -3,46 +3,32 @@ import {mainContent} from "./main_content";
 import { htmlCreate } from "./domManipulation";
 import { showHideElement } from "./domManipulation";
 const sideBarButton = function(){
-	const sideBarButton = document.createElement("i");
-	sideBarButton.classList.add("fi-rr-menu-burger");
+	const sideBarButton = htmlCreate("i","","","fi-rr-menu-burger");
 	sideBarButton.classList.add("sideBarButton");
 	sideBarButton.addEventListener("click",showHideSBare);
 	return sideBarButton;
 };
 const showHideSBare = function(){
-	let sideBar=document.getElementById("sideBar");
-	if(sideBar.classList.value === "sideBar"){
-		sideBar.classList.add("off");
-	}else{
-		sideBar.classList.remove("off"); 
-	}
+	showHideElement("sideBar","off")
 };
 const loadHeader = function(){
-	const header = document.createElement("header");
-	header.setAttribute("id","header");
-	header.innerHTML="<h3>Todo List</h3>";
+	const header = htmlCreate("header","header","<h3>Todo List</h3>")
 	header.appendChild(sideBarButton());
 	return header;
 };
-
 const loadSideBar= function(){
-	const sideBar = document.createElement("div");
-	sideBar.setAttribute("id","sideBar");
-	sideBar.classList.add("sideBar");
+	const sideBar = htmlCreate("div","sideBar","")
 	sideBar.appendChild(sideBarContent());
 	return sideBar;
 };
-
 const loadMain= function(){
-	const main = document.createElement("main");
-	main.setAttribute("id","main");
+	const main = htmlCreate("main","main","")
 	main.appendChild(mainContent());
 	return main;
 
 };
 const loadFooter= function(){
-	const footer = document.createElement("footer");
-	footer.setAttribute("id","footer");
+	const footer = htmlCreate("footer","footer","")
 	footer.innerHTML="<h4>Created By <a href=https://github.com/krimoelbahri> Elbahri </a></h4>";
 	return footer;
 };
