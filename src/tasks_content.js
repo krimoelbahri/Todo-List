@@ -23,13 +23,10 @@ const pushTasks=function(e){
 const renderTasks=function(){
 	let tasksContainer =document.querySelector("#tasksContainer");
 	tasksContainer.textContent="";
-
+	let i=0;
 	tasks.forEach((task)=>{
-		let taskContent = document.createElement("div");
-		let descriptionContent = document.createElement("div");
-		taskContent.classList.add("taskContent");
-		descriptionContent.classList.add("descriptionContent");
-
+		let taskContent =htmlCreate("div",`task${i}`,"","taskContent");
+		let descriptionContent = htmlCreate("div",`description${i}`,"","descriptionContent");
 		taskContent.innerHTML=`
         <input type="checkbox" name="priority" class="checkTasks">
         <h6>${task.name}</h6>
@@ -39,6 +36,7 @@ const renderTasks=function(){
         `;
 		tasksContainer.appendChild(taskContent);
 		tasksContainer.appendChild(descriptionContent);
+		i++;
 	});
 };
 export{pushTasks};
