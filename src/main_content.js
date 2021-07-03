@@ -1,15 +1,17 @@
 import {pushTasks} from "./tasks_content";
 import { htmlCreate } from "./domManipulation";
 import { showHideElement } from "./domManipulation";
-const mainTitle=function(){
-	const mainTitle=htmlCreate("div","mainTitle","Inbox");
-	return mainTitle;
-};
 const addTaskButton=function(){
 	const addTaskButton=htmlCreate("div","addTaskButton","<i class=\"fi-rr-add\"></i>")
 	addTaskButton.addEventListener("click", showHideAddTaskForm);
 	return addTaskButton;
 };
+const mainTitle=function(){
+	const mainTitle=htmlCreate("div","mainTitle","Inbox");
+	mainTitle.appendChild(addTaskButton());
+	return mainTitle;
+};
+
 const tasksContainer=function(){
 	const tasksContainer= htmlCreate("div","tasksContainer","")
 	return tasksContainer;
@@ -47,7 +49,6 @@ const showHideAddTaskForm=function(e){
 const mainContent=function(){
 	const mainContent=htmlCreate("div","mainContent","")
 	mainContent.appendChild(mainTitle());
-	mainContent.appendChild(addTaskButton());
 	mainContent.appendChild(addTaskForm());
 	mainContent.appendChild(tasksContainer());
 	return mainContent;
