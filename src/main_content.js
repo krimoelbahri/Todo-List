@@ -30,7 +30,7 @@ const addTaskForm = function() {
         <input type="date" name="due date" id="taskDueDate">
         <p>Task Priority</p>
         <label for="priority">
-            <input type="radio" name="priority" class="priority" value="low"> Low 
+            <input type="radio" name="priority" class="priority" value="low" checked> Low 
             <input type="radio" name="priority" class="priority" value="medium"> Medium
             <input type="radio" name="priority" class="priority" value="high"> High 
         </label>
