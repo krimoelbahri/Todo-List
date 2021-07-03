@@ -1,5 +1,5 @@
-import showHideElement from './domManipulation';
-import htmlCreate from './domManipulation';
+import {showHideElement} from './domManipulation';
+import {htmlCreate} from './domManipulation';
 let projects= [
 
 ];
