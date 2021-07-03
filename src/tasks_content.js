@@ -13,7 +13,7 @@ const pushTasks=function(e){
 		let task= {
 			name:document.getElementById("taskName").value,
 			description:document.getElementById("taskDescription").value,
-			date:"",
+			date:document.getElementById("taskDueDate").value,
 			priority:"", 
 		};
 		tasks.push(task);
