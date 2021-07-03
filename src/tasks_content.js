@@ -5,7 +5,7 @@ let tasks= [
 ];
 const pushTasks=function(e){
 	e.preventDefault();
-	showHideAddTaskForm();
+	showHideElement("addTaskForm","on");
 	if(document.getElementById("taskName").value === ""){
 		return;
 	}else{
