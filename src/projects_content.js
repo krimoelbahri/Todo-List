@@ -1,4 +1,5 @@
-import{showHideAddProjectForm} from "./sidebar_content";
+import showHideElement from './domManipulation';
+
 let projects= [
 
 ];
