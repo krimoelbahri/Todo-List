@@ -1,10 +1,11 @@
 import {pushProject} from "./projects_content";
+import addsign from './images/addsign.svg'
 
 const addProject=function(){
 	const addProject=document.createElement("div");
 	addProject.setAttribute("id","addProject");
 	addProject.addEventListener("click", showHideAddProjectForm);
-	addProject.innerHTML="<img id =\"addsign\" src=./images/addsign.svg alt=\"Chef\"> Add Project";
+	addProject.innerHTML=`<img id =\"addsign\" src=${addsign} alt=\"Chef\"> Add Project`;
 	return addProject;
 };
 const addProjectForm = function() {
@@ -16,7 +17,6 @@ const addProjectForm = function() {
 	return addProjectForm;
 };
 const showHideAddProjectForm=function(e){
-	console.log(e);
 	let addProjectForm=document.getElementById("addProjectForm");
 	if(addProjectForm.classList.value === "projectForm"){
 		addProjectForm.classList.add("on");
