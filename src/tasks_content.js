@@ -10,8 +10,16 @@ const deleteTask = function(e){
 	//localStorage.setItem("library",JSON.stringify(tasks));
 	renderTasks();
 };
-const showHideEditTaskPriority
-const editTaskPriority= function(){
+const showHideEditTaskPriority= function(e){
+	let j = e.target.dataset.index;
+	showHideElement(`editPriority${j}`,"on");
+}
+const editTaskPriority = function(e){
+	let j = e.target.dataset.index;
+	showHideEditTaskPriority(e);
+	if(e.target.localName !== "input"){return};
+	tasks[j].priority = e.target.value;
+	console.log(tasks[j])
 }
 const priorityValue= function(){
 	let priorityValue
@@ -45,6 +53,7 @@ const renderTasks=function(){
 	tasks.forEach((task)=>{
 		let taskContent =htmlCreate("div",`task${i}`,"","taskContent");
 		let descriptionContent = htmlCreate("div",`description${i}`,"","descriptionContent");
+		let editTaskPriorityForm = htmlCreate("form",`editPriority${i}`,"","editForm" );
 		taskContent.innerHTML=`
         <input type="checkbox" class="checkTasks">
         <h6>${task.name}</h6>
@@ -57,9 +66,18 @@ const renderTasks=function(){
 		descriptionContent.innerHTML=` 
         <p>${task.description}</p>
         `;
+		editTaskPriorityForm.innerHTML=`
+		<label for="priority">
+            <input type="radio" name="priority" class="edit_priority" data-index=${i} value="low"> Low 
+            <input type="radio" name="priority" class="edit_priority" data-index=${i} value="medium"> Medium
+            <input type="radio" name="priority" class="edit_priority" data-index=${i} value="high"> High 
+        </label>
+		`
 		tasksContainer.appendChild(taskContent);
 		tasksContainer.appendChild(descriptionContent);
-		//document.getElementById(`edit${i}`).addEventListener("click", showHideEditTaskPriority);
+		tasksContainer.appendChild(editTaskPriorityForm);
+		document.getElementById(`editPriority${i}`).addEventListener("click",editTaskPriority);
+		document.getElementById(`edit${i}`).addEventListener("click", showHideEditTaskPriority);
 		document.getElementById(`delete${i}`).addEventListener("click", deleteTask)
 		//document.querySelector('.checkTasks').addEventListener("click",checkTasks)
 		i++;
