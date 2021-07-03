@@ -1,9 +1,12 @@
 const htmlCreate= function(htmlElement,id,_innerHtml,_class){
     let element= document.createElement(htmlElement);
-	element.setAttribute("id",id);
+    if(!id){
+
+    }else{
+        element.setAttribute("id",id);
+    }
 	element.innerHTML=_innerHtml;
     if(!_class){
-        return element;
     }else{
         element.classList.add(_class);
     }
