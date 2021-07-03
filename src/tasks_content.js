@@ -4,6 +4,12 @@ import {htmlCreate} from './domManipulation';
 let tasks= [
 
 ];
+const deleteTask = function(e){
+	let j = e.target.dataset.index;
+	tasks.splice(j,1);
+	//localStorage.setItem("library",JSON.stringify(tasks));
+	renderTasks();
+};
 const priorityValue= function(){
 	let priorityValue
 	let priorities= (document.querySelectorAll(".priority"));
@@ -50,7 +56,7 @@ const renderTasks=function(){
         `;
 		tasksContainer.appendChild(taskContent);
 		tasksContainer.appendChild(descriptionContent);
-		document.getElementById(`edit${i}`).addEventListener("click", editTask);
+		//document.getElementById(`edit${i}`).addEventListener("click", editTask);
 		document.getElementById(`delete${i}`).addEventListener("click", deleteTask)
 		i++;
 	});
