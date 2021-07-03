@@ -1,4 +1,4 @@
-import {showHideAddTaskForm} from "./main_content";
+import showHideElement from './domManipulation'
 
 let tasks= [
 
