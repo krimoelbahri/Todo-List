@@ -10,6 +10,9 @@ const deleteTask = function(e){
 	//localStorage.setItem("library",JSON.stringify(tasks));
 	renderTasks();
 };
+const showHideEditTaskPriority
+const editTaskPriority= function(){
+}
 const priorityValue= function(){
 	let priorityValue
 	let priorities= (document.querySelectorAll(".priority"));
@@ -18,7 +21,7 @@ const priorityValue= function(){
 				priorityValue= input.value;
 		}})
 	return priorityValue;
-}
+};
 const pushTasks=function(e){
 	e.preventDefault();
 	showHideElement("addTaskForm","on");
@@ -43,7 +46,7 @@ const renderTasks=function(){
 		let taskContent =htmlCreate("div",`task${i}`,"","taskContent");
 		let descriptionContent = htmlCreate("div",`description${i}`,"","descriptionContent");
 		taskContent.innerHTML=`
-        <input type="checkbox" name="priority" class="checkTasks">
+        <input type="checkbox" class="checkTasks">
         <h6>${task.name}</h6>
 		<div>
 			<p>${task.date}</p>
@@ -56,8 +59,9 @@ const renderTasks=function(){
         `;
 		tasksContainer.appendChild(taskContent);
 		tasksContainer.appendChild(descriptionContent);
-		//document.getElementById(`edit${i}`).addEventListener("click", editTask);
+		//document.getElementById(`edit${i}`).addEventListener("click", showHideEditTaskPriority);
 		document.getElementById(`delete${i}`).addEventListener("click", deleteTask)
+		//document.querySelector('.checkTasks').addEventListener("click",checkTasks)
 		i++;
 	});
 };
