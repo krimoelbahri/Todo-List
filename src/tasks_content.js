@@ -4,24 +4,26 @@ import {htmlCreate} from './domManipulation';
 let tasks= [
 
 ];
+const priorityValue= function(){
+	let priorityValue
+	let priorities= (document.querySelectorAll(".priority"));
+		priorities.forEach((input)=>{
+			if(input.checked){
+				priorityValue= input.value;
+		}})
+	return priorityValue;
+}
 const pushTasks=function(e){
 	e.preventDefault();
 	showHideElement("addTaskForm","on");
 	if(document.getElementById("taskName").value === ""){
 		return;
 	}else{
-		let priorityValue;
-		let priorities= (document.querySelectorAll(".priority"));
-		priorities.forEach((input)=>{
-			if(input.checked){
-				priorityValue= input.value;
-		}});
-		
 		let task= {
 			name:document.getElementById("taskName").value,
 			description:document.getElementById("taskDescription").value,
 			date:document.getElementById("taskDueDate").value,
-			priority:priorityValue, 
+			priority:priorityValue(), 
 		};
 		tasks.push(task);
 		renderTasks();
