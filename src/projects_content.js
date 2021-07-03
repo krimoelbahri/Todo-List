@@ -4,7 +4,7 @@ let projects= [
 
 ];
 const pushProject=function(){
-	showHideAddProjectForm();
+	showHideElement("addProjectForm","on");
 	if(document.getElementById("projectName").value === ""){
 		return;
 	}else{
