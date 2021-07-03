@@ -9,7 +9,7 @@ const sideBarButton = function(){
 	return sideBarButton;
 };
 const showHideSBare = function(){
-	showHideElement("sideBar","off")
+	showHideElement("sideBar","off");
 };
 const loadHeader = function(){
 	const header = htmlCreate("header","header","<h3>Todo List</h3>")
