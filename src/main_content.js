@@ -2,28 +2,21 @@ import {pushTasks} from "./tasks_content";
 import { htmlCreate } from "./domManipulation";
 import { showHideElement } from "./domManipulation";
 const mainTitle=function(){
-	const mainTitle=document.createElement("div");
-	mainTitle.setAttribute("id","mainTitle");
-	mainTitle.innerHTML="Inbox";
+	const mainTitle=htmlCreate("div","mainTitle","Inbox");
 	return mainTitle;
 };
 const addTaskButton=function(){
-	const addTaskButton=document.createElement("div");
-	addTaskButton.setAttribute("id","addTaskButton");
-	addTaskButton.innerHTML="<i class=\"fi-rr-add\"></i>";
+	const addTaskButton=htmlCreate("div","addTaskButton","<i class=\"fi-rr-add\"></i>")
 	addTaskButton.addEventListener("click", showHideAddTaskForm);
 	return addTaskButton;
 };
 const tasksContainer=function(){
-	const tasksContainer=document.createElement("div");
-	tasksContainer.setAttribute("id","tasksContainer");
+	const tasksContainer= htmlCreate("div","tasksContainer","")
 	return tasksContainer;
 };
 
 const addTaskForm = function() {
-	const addTaskForm = document.createElement("form");
-	addTaskForm.setAttribute("id","addTaskForm");
-	addTaskForm.classList.add("TaskForm");
+	const addTaskForm =htmlCreate("form","addTaskForm","","TaskForm") 
 	addTaskForm.innerHTML=`
     <div class="formdivs">
      <button id="close">x</button>
@@ -56,8 +49,7 @@ const showHideAddTaskForm=function(){
 };
 
 const mainContent=function(){
-	const mainContent=document.createElement("div");
-	mainContent.setAttribute("id","mainContent");
+	const mainContent=htmlCreate("div","mainContent","")
 	mainContent.appendChild(mainTitle());
 	mainContent.appendChild(addTaskButton());
 	mainContent.appendChild(addTaskForm());
@@ -65,4 +57,3 @@ const mainContent=function(){
 	return mainContent;
 };
 export {mainContent};
-export{showHideAddTaskForm};
