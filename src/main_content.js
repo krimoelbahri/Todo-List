@@ -1,5 +1,6 @@
 import {pushTasks} from "./tasks_content";
 import { htmlCreate } from "./domManipulation";
+import { showHideElement } from "./domManipulation";
 const mainTitle=function(){
 	const mainTitle=document.createElement("div");
 	mainTitle.setAttribute("id","mainTitle");
