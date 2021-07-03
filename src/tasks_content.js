@@ -41,8 +41,8 @@ const renderTasks=function(){
         <h6>${task.name}</h6>
 		<div>
 			<p>${task.date}</p>
-			<button>Edit</button>
-			<button>Delete</button>
+			<button id="edit${i}" data-index=${i}>Edit</button>
+			<button id="delete${i}" data-index=${i}>Delete</button>
 		</div>
        `;
 		descriptionContent.innerHTML=` 
@@ -50,6 +50,8 @@ const renderTasks=function(){
         `;
 		tasksContainer.appendChild(taskContent);
 		tasksContainer.appendChild(descriptionContent);
+		document.getElementById(`edit${i}`).addEventListener("click", editTask);
+		document.getElementById(`delete${i}`).addEventListener("click", deleteTask)
 		i++;
 	});
 };
