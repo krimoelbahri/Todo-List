@@ -10,11 +10,18 @@ const pushTasks=function(e){
 	if(document.getElementById("taskName").value === ""){
 		return;
 	}else{
+		let priorityValue;
+		let priorities= (document.querySelectorAll(".priority"));
+		priorities.forEach((input)=>{
+			if(input.checked){
+				priorityValue= input.value;
+		}});
+		
 		let task= {
 			name:document.getElementById("taskName").value,
 			description:document.getElementById("taskDescription").value,
 			date:document.getElementById("taskDueDate").value,
-			priority:"", 
+			priority:priorityValue, 
 		};
 		tasks.push(task);
 		renderTasks();
@@ -30,6 +37,7 @@ const renderTasks=function(){
 		taskContent.innerHTML=`
         <input type="checkbox" name="priority" class="checkTasks">
         <h6>${task.name}</h6>
+		<p>${task.date}</p>
        `;
 		descriptionContent.innerHTML=` 
         <p>${task.description}</p>
