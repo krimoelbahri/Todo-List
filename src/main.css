@@ -46,10 +46,10 @@ footer {
 }
 
 /* classes*/
-.sideBar {
+#sideBar {
 	display: flex;
 }
-.sideBar.off {
+#sideBar.off {
 	display: none;
 }
 .projectForm {
