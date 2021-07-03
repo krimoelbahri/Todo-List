@@ -39,13 +39,9 @@ const addTaskForm = function() {
 	addTaskForm.querySelector("#addTask").addEventListener("click",pushTasks);
 	return addTaskForm;
 };
-const showHideAddTaskForm=function(){
-	let addTaskForm=document.getElementById("addTaskForm");
-	if(addTaskForm.classList.value === "TaskForm"){
-		addTaskForm.classList.add("on");
-	}else{
-		addTaskForm.classList.remove("on");
-	}
+const showHideAddTaskForm=function(e){
+	e.preventDefault();
+	showHideElement("addTaskForm","on");
 };
 
 const mainContent=function(){
