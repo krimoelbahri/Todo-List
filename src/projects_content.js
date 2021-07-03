@@ -16,17 +16,16 @@ const pushProject=function(){
 	}
 };
 const renderProjects=function(){
-	console.log(document.querySelector("#projectsContent"));
 	let projectsContent =document.querySelector("#projectsContent");
 	projectsContent.textContent="";
-
+	let i=0;
 	projects.forEach((prj)=>{
-		let projectContainer = document.createElement("div");
-		projectContainer.classList.add("projectContainer");
+		let projectContainer = htmlCreate("div",`project${i}`,"","projectContainer")
 		projectContainer.innerHTML=`
         <h6>${prj.name}</h6>
         `;
 		projectsContent.appendChild(projectContainer);
+		i++;
 	});
 };
 export{pushProject};
