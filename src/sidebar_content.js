@@ -39,7 +39,7 @@ const projectsContent=function(){
 	return projectsContent;
 };
 const sideBarContent=function(){
-	const sideBarContent=htmlCreate("div","sideBarContent");
+	const sideBarContent=htmlCreate("div","sideBarContent","");
 	sideBarContent.appendChild(addProject());
 	sideBarContent.appendChild(addProjectForm());
 	sideBarContent.appendChild(inbox());
