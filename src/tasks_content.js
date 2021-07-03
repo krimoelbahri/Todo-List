@@ -39,7 +39,11 @@ const renderTasks=function(){
 		taskContent.innerHTML=`
         <input type="checkbox" name="priority" class="checkTasks">
         <h6>${task.name}</h6>
-		<p>${task.date}</p>
+		<div>
+			<p>${task.date}</p>
+			<button>Edit</button>
+			<button>Delete</button>
+		</div>
        `;
 		descriptionContent.innerHTML=` 
         <p>${task.description}</p>
