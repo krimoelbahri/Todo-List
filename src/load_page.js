@@ -1,6 +1,7 @@
 import {sideBarContent} from "./sidebar_content";
 import {mainContent} from "./main_content";
 import { htmlCreate } from "./domManipulation";
+import { showHideElement } from "./domManipulation";
 const sideBarButton = function(){
 	const sideBarButton = document.createElement("i");
 	sideBarButton.classList.add("fi-rr-menu-burger");
