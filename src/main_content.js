@@ -36,7 +36,6 @@ const addTaskForm = function() {
          <button id="addTask" >Add Task</button>
     </div>
     `;
-	addTaskForm.querySelector("#close").addEventListener("click",showHideAddTaskForm);
 	addTaskForm.querySelector("#addTask").addEventListener("click",pushTasks);
 	return addTaskForm;
 };
