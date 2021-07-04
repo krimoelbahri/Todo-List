@@ -23,6 +23,7 @@ const loadSideBar= function(){
 };
 const loadMain= function(){
 	const main = htmlCreate("main","main","")
+	main.appendChild(loadSideBar());
 	main.appendChild(mainContent());
 	return main;
 
@@ -35,7 +36,6 @@ const loadFooter= function(){
 const loadWebsite= function(){
 	const content = document.getElementById("content");
 	content.appendChild(loadHeader());
-	content.appendChild(loadSideBar());
 	content.appendChild(loadMain());
 	content.appendChild(loadFooter());   
 };
