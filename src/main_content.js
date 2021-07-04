@@ -21,7 +21,6 @@ const addTaskForm = function() {
 	const addTaskForm =htmlCreate("form","addTaskForm","","TaskForm") 
 	addTaskForm.innerHTML=`
     <div class="formdivs">
-     <button id="close">x</button>
         <input type="text" id="taskName" placeholder="Task Name">
         <p>Task Description</p>
     <textarea type="text" id="taskDescription" ></textarea>
