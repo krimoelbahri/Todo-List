@@ -10,6 +10,7 @@ const sideBarButton = function(){
 };
 const showHideSBare = function(){
 	showHideElement("sideBar","off");
+	showHideElement("main","off")
 };
 const loadHeader = function(){
 	const header = htmlCreate("header","header","<h3>Todo List</h3>")
