@@ -51,12 +51,3 @@ const sideBarContent=function(){
 	return sideBarContent;
 };
 export {sideBarContent};
-
-/*document.addEventListener('click',function(){
-    let addProjectForm=document.getElementById('addProjectForm');
-    if(addProjectForm.classList.value === 'projectForm'){
-        return;
-    }else{
-        addProjectForm.classList.remove('on')
-    }
-})*/
