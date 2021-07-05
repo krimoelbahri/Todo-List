@@ -8,15 +8,39 @@ const deleteTask = function(e){
 	tasks.splice(j,1);
 	renderTasks();
 };
+/*const showHideDescription= function(e){
+	let j;
+	if(e.target.localName === "button"){return};
+	if(e.target.className !== "taskContent"){
+		j = e.target.parentElement.parentElement.dataset.index;
+	}else{
+		j = e.target.dataset.index;
+	};	
+	showHideElement(`description${j}`,"on");
+}*/
+
 const showHideEditTaskPriority= function(e){
 	let j = e.target.dataset.index;
 	showHideElement(`editPriority${j}`,"on");
+}
+const setPriorityColor= function(elm,priority){
+	if(priority==="low"){
+		elm.style.borderLeft="10px solid green"
+	}
+	if(priority==="medium"){
+		elm.style.borderLeft="10px solid yellow"
+	}
+	if(priority==="high"){
+		elm.style.borderLeft="10px solid red"
+	}
 }
 const editTaskPriority = function(e){
 	let j = e.target.dataset.index;
 	if(e.target.localName !== "input"){return};
 	showHideEditTaskPriority(e);
 	tasks[j].priority = e.target.value;
+	let taskToEdit= document.getElementById(`task${j}`)
+	setPriorityColor(taskToEdit,tasks[j].priority)
 }
 const priorityValue= function(){
 	let priorityValue
@@ -45,6 +69,8 @@ const pushTasks=function(e){
 };
 const taskContent =function(i,task){
 	let taskContent =htmlCreate("div",`task${i}`,"","taskContent");
+	taskContent.setAttribute("data-index",i);
+	setPriorityColor(taskContent,task.priority);
 	taskContent.innerHTML=`
 	<div class="taskDiv left" >
 	<input type="checkbox" class="checkTasks">
@@ -88,6 +114,7 @@ const renderTasks=function(){
 		document.getElementById(`editPriority${i}`).addEventListener("click",editTaskPriority);
 		document.getElementById(`edit${i}`).addEventListener("click", showHideEditTaskPriority);
 		document.getElementById(`delete${i}`).addEventListener("click", deleteTask)
+		//document.getElementById(`task${i}`).addEventListener("click",showHideDescription)
 		//document.querySelector('.checkTasks').addEventListener("click",checkTasks)
 		i++;
 	});
