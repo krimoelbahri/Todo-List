@@ -51,6 +51,13 @@ const priorityValue= function(){
 		}})
 	return priorityValue;
 };
+const checkTasks= function(e){
+	if(e.target.checked){
+		e.target.nextElementSibling.style.textDecoration="line-through"
+	}else{
+		e.target.nextElementSibling.style.textDecoration="none"
+	}
+}
 const pushTasks=function(e){
 	e.preventDefault();
 	showHideElement("addTaskForm","on");
@@ -115,7 +122,9 @@ const renderTasks=function(){
 		document.getElementById(`edit${i}`).addEventListener("click", showHideEditTaskPriority);
 		document.getElementById(`delete${i}`).addEventListener("click", deleteTask)
 		//document.getElementById(`task${i}`).addEventListener("click",showHideDescription)
-		//document.querySelector('.checkTasks').addEventListener("click",checkTasks)
+		document.querySelectorAll('.checkTasks').forEach((check)=>{
+			check.addEventListener("click",checkTasks);
+		})
 		i++;
 	});
 };
