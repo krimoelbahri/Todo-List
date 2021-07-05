@@ -15,7 +15,17 @@ const pushProject=function(){
 		renderProjects();
 	}
 };
-const renderProjects=function(){
+const addProjectSelect= function(){
+	let projectSelect= document.getElementById("projectSelect")
+	projectSelect.innerHTML ="" ;
+	projectSelect.innerHTML =`
+	<option value="">--Please choose an option--</option>
+	<option value="inbox">Default project</option>` ;	
+	for(let i=0; i<projects.length; i++){
+	projectSelect.innerHTML +=`<option value="${projects[i].name}">${projects[i].name}</option>` ;	
+	}
+}
+const projectsContent= function(){
 	let projectsContent =document.querySelector("#projectsContent");
 	projectsContent.textContent="";
 	let i=0;
@@ -27,5 +37,9 @@ const renderProjects=function(){
 		projectsContent.appendChild(projectContainer);
 		i++;
 	});
+}
+const renderProjects=function(){
+	projectsContent();
+	addProjectSelect();
 };
 export{pushProject};

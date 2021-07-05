@@ -41,6 +41,11 @@ const addTaskForm = function() {
     </div>
     <div class="formdivs">
         <input type="date" name="due date" id="taskDueDate" required>
+		<label for="pet-select">Choose a project:</label>
+		<select name="pets" id="projectSelect">
+			<option value="">--Please choose an option--</option>
+			<option value="inbox">Default project</option>
+		</select>
         <p>Task Priority</p>
         <label for="priority">
             <input type="radio" name="priority" class="priority" value="low" checked> Low 
@@ -50,6 +55,7 @@ const addTaskForm = function() {
          <button type="submit" id="addTask" >Add Task</button>
     </div>
     `;
+	
 	addTaskForm.addEventListener("submit",pushTasks);
 	addTaskForm.addEventListener("submit",rotateAddTaskButton);
 	return addTaskForm;
