@@ -55,7 +55,7 @@ const renderTasks=function(){
 		let descriptionContent = htmlCreate("div",`description${i}`,"","descriptionContent");
 		let editTaskPriorityForm = htmlCreate("form",`editPriority${i}`,"","editForm" );
 		taskContent.innerHTML=`
-		<div class="taskDiv left>
+		<div class="taskDiv left" >
 		<input type="checkbox" class="checkTasks">
         <h6>${task.name}</h6>
 		</div>
