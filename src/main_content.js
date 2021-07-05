@@ -11,8 +11,7 @@ const rotateAddTaskButton= function(e){
 		e.target.parentElement.style.transform ="rotate(0deg)";
 	}
 };
-const showHideAddTaskForm=function(e){
-	e.preventDefault();
+const showHideAddTaskForm=function(){
 	showHideElement("addTaskForm","on");
 };
 const addTaskButton=function(){
