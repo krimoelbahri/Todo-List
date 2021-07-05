@@ -1,9 +1,24 @@
 import {pushTasks} from "./tasks_content";
 import { htmlCreate } from "./domManipulation";
 import { showHideElement } from "./domManipulation";
+const rotateAddTaskButton= function(e){
+	console.log(e);
+	e.target.parentElement.classList.toggle("on");
+   
+	if(e.target.parentElement.className === ("on")){
+		e.target.parentElement.style.transform ="rotate(45deg)";
+	}else{
+		e.target.parentElement.style.transform ="rotate(0deg)";
+	}
+};
+const showHideAddTaskForm=function(e){
+	e.preventDefault();
+	showHideElement("addTaskForm","on");
+};
 const addTaskButton=function(){
 	const addTaskButton=htmlCreate("div","addTaskButton","<i class=\"fi-rr-add\"></i>")
 	addTaskButton.addEventListener("click", showHideAddTaskForm);
+	addTaskButton.addEventListener("click", rotateAddTaskButton);
 	return addTaskButton;
 };
 const mainTitle=function(){
@@ -38,10 +53,6 @@ const addTaskForm = function() {
     `;
 	addTaskForm.querySelector("#addTask").addEventListener("click",pushTasks);
 	return addTaskForm;
-};
-const showHideAddTaskForm=function(e){
-	e.preventDefault();
-	showHideElement("addTaskForm","on");
 };
 
 const mainContent=function(){
