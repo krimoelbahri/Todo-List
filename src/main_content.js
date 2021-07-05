@@ -1,14 +1,14 @@
 import {pushTasks} from "./tasks_content";
-import { htmlCreate } from "./domManipulation";
-import { showHideElement } from "./domManipulation";
-const rotateAddTaskButton= function(e){
-	console.log(e);
-	e.target.parentElement.classList.toggle("on");
-   
-	if(e.target.parentElement.className === ("on")){
-		e.target.parentElement.style.transform ="rotate(45deg)";
+import {htmlCreate} from "./domManipulation";
+import {showHideElement} from "./domManipulation";
+const rotateAddTaskButton= function(){
+	
+	let addTaskButton = document.getElementById("addTaskButton");
+	addTaskButton.classList.toggle("on");
+	if(addTaskButton.className === ("on")){
+		addTaskButton.style.transform ="rotate(45deg)";
 	}else{
-		e.target.parentElement.style.transform ="rotate(0deg)";
+		addTaskButton.style.transform ="rotate(0deg)";
 	}
 };
 const showHideAddTaskForm=function(){
@@ -35,22 +35,23 @@ const addTaskForm = function() {
 	const addTaskForm =htmlCreate("form","addTaskForm","","TaskForm") 
 	addTaskForm.innerHTML=`
     <div class="formdivs">
-        <input type="text" id="taskName" placeholder="Task Name">
+        <input type="text" id="taskName" placeholder="Task Name" required>
         <p>Task Description</p>
-    <textarea type="text" id="taskDescription" ></textarea>
+    <textarea type="text" id="taskDescription" required ></textarea>
     </div>
     <div class="formdivs">
-        <input type="date" name="due date" id="taskDueDate">
+        <input type="date" name="due date" id="taskDueDate" required>
         <p>Task Priority</p>
         <label for="priority">
             <input type="radio" name="priority" class="priority" value="low" checked> Low 
             <input type="radio" name="priority" class="priority" value="medium"> Medium
             <input type="radio" name="priority" class="priority" value="high"> High 
         </label>
-         <button id="addTask" >Add Task</button>
+         <button type="submit" id="addTask" >Add Task</button>
     </div>
     `;
-	addTaskForm.querySelector("#addTask").addEventListener("click",pushTasks);
+	addTaskForm.addEventListener("submit",pushTasks);
+	addTaskForm.addEventListener("submit",rotateAddTaskButton);
 	return addTaskForm;
 };
 
