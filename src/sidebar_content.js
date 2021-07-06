@@ -53,7 +53,7 @@ const sideBarContent=function(){
 	const sideBarContent=htmlCreate("div","sideBarContent","");
 	sideBarContent.appendChild(addProject());
 	sideBarContent.appendChild(addProjectForm());
-	sideBarContent.appendChild(uList);
+	sideBarContent.appendChild(uList());
 	sideBarContent.appendChild(projects());
 	sideBarContent.appendChild(projectsContent());
 
