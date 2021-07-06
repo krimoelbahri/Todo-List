@@ -45,7 +45,14 @@ const priorityValue= function(){
 		}})
 	return priorityValue;
 };
-
+const projectValue= function(){
+	let projectValue = document.getElementById("projectSelect").value;
+	if(projectValue===""){
+		return("inbox");
+	}else{
+			return projectValue;
+		}
+};
 const checkTasks= function(e){
 	if(e.target.checked){
 		e.target.nextElementSibling.style.textDecoration="line-through"
@@ -61,11 +68,10 @@ const pushTasks=function(e){
 		description:document.getElementById("taskDescription").value,
 		date:document.getElementById("taskDueDate").value,
 		priority:priorityValue(),
-		project: "",
+		project:projectValue(),
 	};
 	tasks.push(task);
-	renderTasks();
-	
+	renderTasks(tasks);
 };
 const taskContent =function(i,task){
 	let taskContent =htmlCreate("div",`task${i}`,"","taskContent");
@@ -103,11 +109,11 @@ const editTaskPriorityForm = function(i){
 	`
 	return editTaskPriorityForm;
 }
-const renderTasks=function(){
+const renderTasks=function(tasksArray){
 	let tasksContainer =document.querySelector("#tasksContainer");
 	tasksContainer.textContent="";
 	let i=0;
-	tasks.forEach((task)=>{
+	tasksArray.forEach((task)=>{
 		tasksContainer.appendChild(editTaskPriorityForm(i));
 		tasksContainer.appendChild(taskContent(i,task));
 		tasksContainer.appendChild(descriptionContent(i,task));
