@@ -119,8 +119,9 @@ const renderTasks=function(){
 	tasksContainer.textContent="";
 	let i=0;
 	let tasksArray=tasks;
-	if(project.toLocaleLowerCase !=="inbox"){
-		tasksArray= filterArray(tasks,project.toLocaleLowerCase)
+	let str=project.toLocaleLowerCase();
+	if( str !=="inbox"){
+		tasksArray= filterArray(tasks,str)
 	}
 	tasksArray.forEach((task)=>{
 		tasksContainer.appendChild(editTaskPriorityForm(i));
