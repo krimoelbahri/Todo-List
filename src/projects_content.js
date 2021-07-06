@@ -1,5 +1,6 @@
 import {showHideElement} from './domManipulation';
 import {htmlCreate} from './domManipulation';
+import{renderMain} from './tasks_content'
 let projects= [
 
 ];
@@ -25,6 +26,7 @@ const addProjectSelect= function(){
 	projectSelect.innerHTML +=`<option value="${projects[i].name}">${projects[i].name}</option>` ;	
 	}
 }
+
 const projectsContent= function(){
 	let projectsContent =document.querySelector("#projectsContent");
 	projectsContent.textContent="";
@@ -35,6 +37,7 @@ const projectsContent= function(){
         <h6>${prj.name}</h6>
         `;
 		projectsContent.appendChild(projectContainer);
+		projectContainer.addEventListener("click",renderMain)
 		i++;
 	});
 }
