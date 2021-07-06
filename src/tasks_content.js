@@ -1,6 +1,6 @@
 import {showHideElement} from './domManipulation';
 import {htmlCreate} from './domManipulation';
-
+import {filterArray} from './domManipulation'
 let tasks= [];
 
 const deleteTask = function(e){
@@ -71,7 +71,7 @@ const pushTasks=function(e){
 		project:projectValue(),
 	};
 	tasks.push(task);
-	renderTasks(tasks);
+	renderTasks();
 };
 const taskContent =function(i,task){
 	let taskContent =htmlCreate("div",`task${i}`,"","taskContent");
@@ -109,10 +109,20 @@ const editTaskPriorityForm = function(i){
 	`
 	return editTaskPriorityForm;
 }
-const renderTasks=function(tasksArray){
+const renderMain= function(e){
+	document.getElementById("projectTitle").innerHTML=e.target.innerText;
+	renderTasks();
+}
+const renderTasks=function(){
+	let project= document.getElementById("projectTitle").innerHTML;
+	console.log(project); 
 	let tasksContainer =document.querySelector("#tasksContainer");
 	tasksContainer.textContent="";
 	let i=0;
+	let tasksArray=tasks;
+	if(project.toLocaleLowerCase !=="inbox"){
+		tasksArray= filterArray(tasks,project)
+	}
 	tasksArray.forEach((task)=>{
 		tasksContainer.appendChild(editTaskPriorityForm(i));
 		tasksContainer.appendChild(taskContent(i,task));
@@ -128,3 +138,4 @@ const renderTasks=function(tasksArray){
 	});
 };
 export{pushTasks};
+export{renderMain};
