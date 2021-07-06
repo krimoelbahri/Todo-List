@@ -115,7 +115,6 @@ const renderMain= function(e){
 }
 const renderTasks=function(){
 	let project= document.getElementById("projectTitle").innerHTML;
-	console.log(project); 
 	let tasksContainer =document.querySelector("#tasksContainer");
 	tasksContainer.textContent="";
 	let i=0;
