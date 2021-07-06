@@ -8,16 +8,10 @@ const deleteTask = function(e){
 	tasks.splice(j,1);
 	renderTasks();
 };
-/*const showHideDescription= function(e){
-	let j;
-	if(e.target.localName === "button"){return};
-	if(e.target.className !== "taskContent"){
-		j = e.target.parentElement.parentElement.dataset.index;
-	}else{
-		j = e.target.dataset.index;
-	};	
+const showHideDescription= function(e){
+	let j = e.target.dataset.index;
 	showHideElement(`description${j}`,"on");
-}*/
+}
 
 const showHideEditTaskPriority= function(e){
 	let j = e.target.dataset.index;
@@ -81,7 +75,7 @@ const taskContent =function(i,task){
 	taskContent.innerHTML=`
 	<div class="taskDiv left" >
 	<input type="checkbox" class="checkTasks">
-	<h6>${task.name}</h6>
+	<h6 id="taskName${i}" data-index=${i}>${task.name}</h6>
 	</div>
 	
 	<div class="taskDiv right">
@@ -115,13 +109,13 @@ const renderTasks=function(){
 	tasksContainer.textContent="";
 	let i=0;
 	tasks.forEach((task)=>{
+		tasksContainer.appendChild(editTaskPriorityForm(i));
 		tasksContainer.appendChild(taskContent(i,task));
 		tasksContainer.appendChild(descriptionContent(i,task));
-		tasksContainer.appendChild(editTaskPriorityForm(i));
 		document.getElementById(`editPriority${i}`).addEventListener("click",editTaskPriority);
 		document.getElementById(`edit${i}`).addEventListener("click", showHideEditTaskPriority);
 		document.getElementById(`delete${i}`).addEventListener("click", deleteTask)
-		//document.getElementById(`task${i}`).addEventListener("click",showHideDescription)
+		document.getElementById(`taskName${i}`).addEventListener("click",showHideDescription)
 		document.querySelectorAll('.checkTasks').forEach((check)=>{
 			check.addEventListener("click",checkTasks);
 		})
