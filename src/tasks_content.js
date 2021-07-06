@@ -45,6 +45,7 @@ const priorityValue= function(){
 		}})
 	return priorityValue;
 };
+
 const checkTasks= function(e){
 	if(e.target.checked){
 		e.target.nextElementSibling.style.textDecoration="line-through"
@@ -55,18 +56,16 @@ const checkTasks= function(e){
 const pushTasks=function(e){
 	e.preventDefault();
 	showHideElement("addTaskForm","on");
-	if(document.getElementById("taskName").value === ""){
-		return;
-	}else{
-		let task= {
-			name:document.getElementById("taskName").value,
-			description:document.getElementById("taskDescription").value,
-			date:document.getElementById("taskDueDate").value,
-			priority:priorityValue(), 
-		};
-		tasks.push(task);
-		renderTasks();
-	}
+	let task= {
+		name:document.getElementById("taskName").value,
+		description:document.getElementById("taskDescription").value,
+		date:document.getElementById("taskDueDate").value,
+		priority:priorityValue(),
+		project: "",
+	};
+	tasks.push(task);
+	renderTasks();
+	
 };
 const taskContent =function(i,task){
 	let taskContent =htmlCreate("div",`task${i}`,"","taskContent");
