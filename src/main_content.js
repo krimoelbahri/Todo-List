@@ -21,7 +21,9 @@ const addTaskButton=function(){
 	return addTaskButton;
 };
 const mainTitle=function(){
-	const mainTitle=htmlCreate("div","mainTitle","Inbox");
+	const mainTitle=htmlCreate("div","mainTitle","");
+	const projectTitle=htmlCreate("div","projectTitle","Inbox");
+	mainTitle.appendChild(projectTitle);
 	mainTitle.appendChild(addTaskButton());
 	return mainTitle;
 };
