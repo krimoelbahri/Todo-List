@@ -1,0 +1,11 @@
+{
+  "indexes": [{
+    "collectionGroup": "Tasks",
+    "queryScope": "COLLECTION",
+    "fields": [
+      { "fieldPath": "project", "order": "ASCENDING" },
+      { "fieldPath": "date", "order": "DESCENDING" }
+    ]
+  }],
+  "fieldOverrides": []
+}
